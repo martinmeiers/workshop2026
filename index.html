@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="fr" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Workshop Callisthénie 2026 | Maîtrisez la Gravité</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;900&display=swap');
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0a0a0a;
+            color: #ffffff;
+        }
+
+        .glass-effect {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .card-border-visible {
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
+        }
+
+        .hero-gradient {
+            background: radial-gradient(circle at center, rgba(249, 115, 22, 0.15) 0%, transparent 70%);
+        }
+
+        .text-gradient {
+            background: linear-gradient(to right, #ffffff, #fb923c);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .btn-premium {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn-premium:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px -10px rgba(249, 115, 22, 0.5);
+        }
+
+        .card-hover:hover {
+            border-color: rgba(249, 115, 22, 0.4);
+            transform: scale(1.01);
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        @keyframes pulse-red {
+            0% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.7; transform: scale(0.98); }
+            100% { opacity: 1; transform: scale(1); }
+        }
+        .pulse-urgent {
+            animation: pulse-red 2s infinite ease-in-out;
+        }
+
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0a0a0a;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #444;
+            border-radius: 10px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #f97316;
+        }
+
+        .insta-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            color: #a1a1aa;
+            font-size: 0.85rem;
+            transition: color 0.3s ease;
+        }
+        .insta-link:hover { color: #f97316; }
+
+        .form-input {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+        }
+        .form-input:focus {
+            outline: none;
+            border-color: #f97316;
+            background: rgba(255, 255, 255, 0.08);
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full z-50 glass-effect border-b border-white/5 transition-all duration-300" id="mainNav">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+            <div class="flex items-center gap-3">
+                <div class="w-10 h-10 bg-orange-600 rounded-lg flex items-center justify-center shadow-lg shadow-orange-600/20">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="text-white">
+                        <path d="M7 2V12M17 2V12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                        <circle cx="7" cy="16" r="4" stroke="currentColor" stroke-width="2"/>
+                        <circle cx="17" cy="16" r="4" stroke="currentColor" stroke-width="2"/>
+                    </svg>
+                </div>
+                <span class="text-lg font-black tracking-tighter uppercase text-white">workshop<span class="text-orange-500">2026</span></span>
+            </div>
+            
+            <div class="hidden md:flex items-center gap-8 text-sm font-medium text-gray-400">
+                <a href="#accueil" class="hover:text-white transition-colors">Accueil</a>
+                <a href="#equipe" class="hover:text-white transition-colors">Équipe</a>
+                <a href="#workshops" class="hover:text-white transition-colors">Calendrier</a>
+                <a href="#galerie" class="hover:text-white transition-colors">Photos</a>
+                <a href="#contact" class="hover:text-white transition-colors">Contact</a>
+            </div>
+
+            <a href="#workshops" class="btn-premium bg-white hover:bg-orange-600 text-black hover:text-white px-6 py-2.5 rounded-full text-sm font-bold tracking-wide uppercase">
+                Réserver
+            </a>
+        </div>
+    </nav>
+
+    <!-- Section Hero -->
+    <section id="accueil" class="relative min-h-screen flex items-center justify-center pt-20 hero-gradient overflow-hidden">
+        <div class="absolute inset-0 z-0 opacity-20">
+            <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-orange-600/20 rounded-full blur-[120px]"></div>
+        </div>
+
+        <div class="relative z-10 max-w-5xl mx-auto px-6 text-center">
+            <span class="inline-block px-4 py-1.5 mb-6 text-xs font-bold tracking-[0.2em] text-orange-400 border border-orange-400/30 rounded-full uppercase">
+                Édition Exclusive 2026
+            </span>
+            <h1 class="text-5xl md:text-8xl font-black mb-8 leading-tight tracking-tighter uppercase">
+                Workshop <br>
+                <span class="text-gradient underline decoration-orange-600 underline-offset-8">callisthénie</span>
+            </h1>
+            <p class="text-lg md:text-xl text-gray-400 mb-10 max-w-3xl mx-auto font-light leading-relaxed">
+                Martin et Alexandre vous transmettent les secrets du Handstand et des figures de Callisthénie pour dépasser vos limites.
+            </p>
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+                <a href="#workshops" class="w-full sm:w-auto px-10 py-4 bg-white text-black font-black rounded-xl hover:bg-orange-600 hover:text-white transition-all uppercase">
+                    Calendrier 2026
+                </a>
+                <a href="#equipe" class="w-full sm:w-auto px-10 py-4 glass-effect border border-white/10 text-white font-bold rounded-xl hover:bg-white/5 transition-all uppercase">
+                    Les Coachs
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Équipe -->
+    <section id="equipe" class="py-32 bg-zinc-950">
+        <div class="max-w-[1400px] mx-auto px-6">
+            <div class="mb-20 text-center flex flex-col items-center">
+                <h2 class="text-4xl md:text-6xl font-black mb-4 uppercase italic">Vos <span class="text-orange-600">Coachs</span></h2>
+                <div class="h-1.5 w-24 bg-gradient-to-r from-orange-600 to-orange-400"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12">
+                <!-- Martin -->
+                <div class="group glass-effect rounded-[3rem] p-6 lg:p-10 border border-white/5 card-hover transition-all duration-500 flex flex-col">
+                    <div class="relative mb-8 rounded-[2rem] overflow-hidden aspect-[4/5] shadow-2xl shadow-black/50">
+                        <img src="https://lh3.googleusercontent.com/d/1UesemS3yE9-1mr2THjMAH0X_xzF1f3V-" alt="Martin - Expert Handstand" class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
+                        <div class="absolute bottom-8 left-8">
+                            <h3 class="text-3xl lg:text-5xl font-black uppercase tracking-tighter text-white mb-1">Martin</h3>
+                            <a href="https://instagram.com/exilibre90" target="_blank" class="insta-link text-base lg:text-lg">
+                                <i class="fab fa-instagram text-orange-500"></i>
+                                <span>@exilibre90</span>
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <div class="flex-grow px-2">
+                        <ul class="space-y-4 lg:space-y-5 text-gray-300 text-sm lg:text-lg">
+                            <li class="flex items-center">
+                                <span class="w-10 flex-shrink-0 flex justify-center text-orange-500"><i class="fas fa-graduation-cap text-lg"></i></span>
+                                <span class="font-medium">Master en kinésithérapie</span>
+                            </li>
+                            <li class="flex items-center">
+                                <span class="w-10 flex-shrink-0 flex justify-center text-orange-500"><i class="fas fa-history text-lg"></i></span>
+                                <span class="font-medium">11 ans d'expérience en Callisthénie</span>
+                            </li>
+                            <li class="flex items-center">
+                                <span class="w-10 flex-shrink-0 flex justify-center text-orange-500"><i class="fas fa-laptop text-lg"></i></span>
+                                <span class="font-medium">5 ans de coaching en ligne</span>
+                            </li>
+                            <li class="flex items-center">
+                                <span class="w-10 flex-shrink-0 flex justify-center text-orange-500"><i class="fas fa-bolt text-lg"></i></span>
+                                <span class="text-sm lg:text-lg text-orange-400 uppercase tracking-tighter whitespace-nowrap">Handstand & mobilité</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Alexandre -->
+                <div class="group glass-effect rounded-[3rem] p-6 lg:p-10 border border-white/5 card-hover transition-all duration-500 flex flex-col">
+                    <div class="relative mb-8 rounded-[2rem] overflow-hidden aspect-[4/5] shadow-2xl shadow-black/50">
+                        <img src="https://lh3.googleusercontent.com/d/11DXUUgytCfh8V0CnQiTO_jSYz47l-jUt" alt="Alexandre - Expert Street Lifting" class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
+                        <div class="absolute bottom-8 left-8">
+                            <h3 class="text-3xl lg:text-5xl font-black uppercase tracking-tighter text-white mb-1">Alexandre</h3>
+                            <a href="https://instagram.com/alexandre_012workout" target="_blank" class="insta-link text-base lg:text-lg">
+                                <i class="fab fa-instagram text-orange-500"></i>
+                                <span>@alexandre_012workout</span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="flex-grow px-2">
+                        <ul class="space-y-4 lg:space-y-5 text-gray-300 text-sm lg:text-lg">
+                            <li class="flex items-center">
+                                <span class="w-10 flex-shrink-0 flex justify-center text-orange-600"><i class="fas fa-graduation-cap text-lg"></i></span>
+                                <span class="font-medium">Master en Sciences du sport</span>
+                            </li>
+                            <li class="flex items-center">
+                                <span class="w-10 flex-shrink-0 flex justify-center text-orange-600"><i class="fas fa-history text-lg"></i></span>
+                                <span class="font-medium">14 ans d'expérience en Callisthénie</span>
+                            </li>
+                            <li class="flex items-center">
+                                <span class="w-10 flex-shrink-0 flex justify-center text-orange-600"><i class="fas fa-laptop text-lg"></i></span>
+                                <span class="font-medium">7 ans de coaching en ligne</span>
+                            </li>
+                            <li class="flex items-center">
+                                <span class="w-10 flex-shrink-0 flex justify-center text-orange-600"><i class="fas fa-bolt text-lg"></i></span>
+                                <span class="text-sm lg:text-lg text-orange-400 uppercase tracking-tighter whitespace-nowrap">Street lifting & figures statiques</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Calendrier -->
+    <section id="workshops" class="py-32 bg-black relative">
+        <div class="max-w-[1400px] mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between items-center mb-16 gap-6">
+                <div>
+                    <h2 class="text-4xl md:text-5xl font-black mb-2 uppercase text-white">Calendrier <span class="text-orange-600">2026</span></h2>
+                    <div class="flex items-center gap-2 text-red-600 font-bold text-sm tracking-widest uppercase pulse-urgent">
+                        <i class="fas fa-exclamation-triangle"></i>
+                        <span>Places limitées</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <!-- PARIS -->
+                <div class="glass-effect rounded-[2.5rem] p-6 lg:p-8 card-border-visible card-hover transition-all duration-300 flex flex-col">
+                    <div class="flex justify-between items-start mb-6">
+                        <div>
+                            <h3 class="text-xl lg:text-2xl font-black uppercase tracking-tight text-white">Paris</h3>
+                            <p class="text-gray-500 font-medium text-[10px] uppercase">Weekend complet</p>
+                        </div>
+                        <div class="bg-orange-600/20 text-orange-500 px-3 py-1 rounded-lg font-bold text-base lg:text-lg">300€</div>
+                    </div>
+                    <p class="text-white font-bold text-xs mb-6 flex items-center gap-2 uppercase tracking-wider"><i class="far fa-calendar-alt text-orange-600"></i> 11 - 12 Avril 2026</p>
+                    <div class="space-y-6 mb-10 flex-grow text-sm">
+                        <div class="border-l-2 border-orange-600/30 pl-4">
+                            <p class="font-bold text-white uppercase mb-1 text-[10px]">Samedi</p>
+                            <p class="text-gray-400 leading-relaxed text-[11px]">9h-12h : Handstand<br>14h-17h : Traction, Muscle-up, Front Lever</p>
+                        </div>
+                        <div class="border-l-2 border-orange-500/30 pl-4">
+                            <p class="font-bold text-white uppercase mb-1 text-[10px]">Dimanche</p>
+                            <p class="text-gray-400 leading-relaxed text-[11px]">9h-12h : Handstand<br>14h-17h : Dips, Handstand Push-up, Planche</p>
+                        </div>
+                    </div>
+                    <a href="#contact" class="block w-full text-center py-4 rounded-2xl bg-white hover:bg-orange-600 text-black hover:text-white transition-all font-black uppercase text-[10px] tracking-widest">Réserver</a>
+                </div>
+
+                <!-- TOULOUSE -->
+                <div class="glass-effect rounded-[2.5rem] p-6 lg:p-8 card-border-visible card-hover transition-all duration-300 flex flex-col">
+                    <div class="flex justify-between items-start mb-6">
+                        <div>
+                            <h3 class="text-xl lg:text-2xl font-black uppercase tracking-tight text-white">Toulouse</h3>
+                            <p class="text-gray-500 font-medium text-[10px] uppercase">Journée unique</p>
+                        </div>
+                        <div class="bg-orange-600/20 text-orange-500 px-3 py-1 rounded-lg font-bold text-base lg:text-lg">150€</div>
+                    </div>
+                    <p class="text-white font-bold text-xs mb-6 flex items-center gap-2 uppercase tracking-wider"><i class="far fa-calendar-alt text-orange-600"></i> 14 Juin 2026</p>
+                    <div class="space-y-6 mb-10 flex-grow text-sm text-gray-400">
+                        <div class="border-l-2 border-orange-600/30 pl-4">
+                            <p class="font-bold text-white uppercase mb-1 text-[10px]">Dimanche</p>
+                            <p class="leading-relaxed text-[11px]">9h-12h : Handstand<br>14h-17h : Muscle-up & Handstand Push-up</p>
+                        </div>
+                    </div>
+                    <a href="#contact" class="block w-full text-center py-4 rounded-2xl bg-white hover:bg-orange-600 text-black hover:text-white transition-all font-black uppercase text-[10px] tracking-widest">Réserver</a>
+                </div>
+
+                <!-- CHARLEROI -->
+                <div class="glass-effect rounded-[2.5rem] p-6 lg:p-8 card-border-visible card-hover transition-all duration-300 flex flex-col">
+                    <div class="flex justify-between items-start mb-6">
+                        <div>
+                            <h3 class="text-xl lg:text-2xl font-black uppercase tracking-tight text-white">Charleroi</h3>
+                            <p class="text-gray-500 font-medium text-[10px] uppercase">Journée unique</p>
+                        </div>
+                        <div class="bg-orange-600/20 text-orange-500 px-3 py-1 rounded-lg font-bold text-base lg:text-lg">150€</div>
+                    </div>
+                    <p class="text-white font-bold text-xs mb-6 flex items-center gap-2 uppercase tracking-wider"><i class="far fa-calendar-alt text-orange-600"></i> 16 Août 2026</p>
+                    <div class="space-y-6 mb-10 flex-grow text-sm text-gray-400">
+                        <div class="border-l-2 border-orange-600/30 pl-4">
+                            <p class="font-bold text-white uppercase mb-1 text-[10px]">Dimanche</p>
+                            <p class="leading-relaxed text-[11px]">9h-12h : Handstand<br>14h-17h : Muscle-up & Handstand Push-up</p>
+                        </div>
+                    </div>
+                    <a href="#contact" class="block w-full text-center py-4 rounded-2xl bg-white hover:bg-orange-600 text-black hover:text-white transition-all font-black uppercase text-[10px] tracking-widest">Réserver</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Galerie Photos -->
+    <section id="galerie" class="py-32 bg-zinc-950 overflow-hidden">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="flex justify-between items-end mb-12">
+                <div>
+                    <h2 class="text-3xl font-black uppercase mb-2">Derniers <span class="text-orange-600">Workshops</span></h2>
+                    <div class="h-1 w-20 bg-gradient-to-r from-orange-600 to-orange-400"></div>
+                </div>
+                <div class="flex gap-2">
+                    <button onclick="scrollGallery('gallery', -300)" class="w-12 h-12 rounded-full border border-white/10 hover:border-orange-600 flex items-center justify-center transition-all bg-white/5"><i class="fas fa-chevron-left text-white"></i></button>
+                    <button onclick="scrollGallery('gallery', 300)" class="w-12 h-12 rounded-full border border-white/10 hover:border-orange-600 flex items-center justify-center transition-all bg-white/5"><i class="fas fa-chevron-right text-white"></i></button>
+                </div>
+            </div>
+            <div id="gallery" class="flex gap-6 overflow-x-auto no-scrollbar scroll-smooth">
+                <div class="min-w-[280px] aspect-[3/4] rounded-2xl overflow-hidden glass-effect border border-white/5"><img src="https://lh3.googleusercontent.com/d/1dkackTY2oSkFzDbQRta0VuB4CU16n8J7" class="w-full h-full object-cover hover:scale-105 transition-all duration-500"></div>
+                <div class="min-w-[280px] aspect-[3/4] rounded-2xl overflow-hidden glass-effect border border-white/5"><img src="https://lh3.googleusercontent.com/d/12Vm52OvDJUnzvKG5wYA9Zk-SN3fgU2MK" class="w-full h-full object-cover hover:scale-105 transition-all duration-500"></div>
+                <div class="min-w-[280px] aspect-[3/4] rounded-2xl overflow-hidden glass-effect border border-white/5"><img src="https://lh3.googleusercontent.com/d/1YSvZJVMqAm6jXd5Yja0-CWAHuu_OycMk" class="w-full h-full object-cover hover:scale-105 transition-all duration-500"></div>
+                <div class="min-w-[280px] aspect-[3/4] rounded-2xl overflow-hidden glass-effect border border-white/5"><img src="https://lh3.googleusercontent.com/d/1WnKOhyu9JlR3RVtbs8I1pdCD--31lp64" class="w-full h-full object-cover hover:scale-105 transition-all duration-500"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Témoignages (Corrigée pour rapprocher les prénoms) -->
+    <section id="testimonials" class="py-32 bg-black overflow-hidden border-t border-white/5">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="flex justify-between items-end mb-12">
+                <div>
+                    <h2 class="text-3xl font-black uppercase mb-2">Témoignages <span class="text-orange-600">2025</span></h2>
+                    <div class="h-1 w-20 bg-orange-600"></div>
+                </div>
+                <div class="flex gap-2">
+                    <button onclick="scrollGallery('testi', -350)" class="w-12 h-12 rounded-full border border-white/10 hover:border-orange-600 flex items-center justify-center transition-all bg-white/5"><i class="fas fa-chevron-left text-white"></i></button>
+                    <button onclick="scrollGallery('testi', 350)" class="w-12 h-12 rounded-full border border-white/10 hover:border-orange-600 flex items-center justify-center transition-all bg-white/5"><i class="fas fa-chevron-right text-white"></i></button>
+                </div>
+            </div>
+
+            <div id="testi" class="flex gap-6 overflow-x-auto no-scrollbar scroll-smooth">
+                <!-- Témoignage 1 -->
+                <div class="min-w-[320px] md:min-w-[400px] p-8 glass-effect rounded-[2rem] border border-white/5 flex flex-col italic">
+                    <div class="flex-grow">
+                        <i class="fas fa-quote-left text-orange-600 text-2xl opacity-50 mb-4 block"></i>
+                        <p class="text-gray-300 leading-relaxed text-sm">"Merci pour votre disponibilité, vos conseils et vos retours personnalisés. On repart avec les bons ajustements et une vision plus claire. 2 coachs passionnés et une super ambiance entre les pratiquants, ça rebooste."</p>
+                    </div>
+                    <div class="not-italic mt-4 pt-4 border-t border-white/5">
+                        <span class="font-black uppercase text-[10px] tracking-widest text-orange-500">Christophe</span>
+                    </div>
+                </div>
+                <!-- Témoignage 2 -->
+                <div class="min-w-[320px] md:min-w-[400px] p-8 glass-effect rounded-[2rem] border border-white/5 flex flex-col italic">
+                    <div class="flex-grow">
+                        <i class="fas fa-quote-left text-orange-600 text-2xl opacity-50 mb-4 block"></i>
+                        <p class="text-gray-300 leading-relaxed text-sm">"Débutant en calisthénie, ce workshop m'a donné exactement ce dont j'avais besoin : apprendre les fondamentaux des mouvements et avoir un retour précis sur ma technique. La disponibilité des coachs a fait toute la différence."</p>
+                    </div>
+                    <div class="not-italic mt-4 pt-4 border-t border-white/5">
+                        <span class="font-black uppercase text-[10px] tracking-widest text-orange-500">Kévin</span>
+                    </div>
+                </div>
+                <!-- Témoignage 3 -->
+                <div class="min-w-[320px] md:min-w-[400px] p-8 glass-effect rounded-[2rem] border border-white/5 flex flex-col italic">
+                    <div class="flex-grow">
+                        <i class="fas fa-quote-left text-orange-600 text-2xl opacity-50 mb-4 block"></i>
+                        <p class="text-gray-300 leading-relaxed text-sm">"Journée exceptionnelle : un contenu clair et progressif, des exercices variés et adaptés à tous les niveaux, et surtout une ambiance super motivante. Je repars inspirée et déterminée."</p>
+                    </div>
+                    <div class="not-italic mt-4 pt-4 border-t border-white/5">
+                        <span class="font-black uppercase text-[10px] tracking-widest text-orange-500">Lucie</span>
+                    </div>
+                </div>
+                <!-- Témoignage 4 (Jérémy) -->
+                <div class="min-w-[320px] md:min-w-[400px] p-8 glass-effect rounded-[2rem] border border-white/5 flex flex-col italic">
+                    <div class="flex-grow">
+                        <i class="fas fa-quote-left text-orange-600 text-2xl opacity-50 mb-4 block"></i>
+                        <p class="text-gray-300 leading-relaxed text-sm">"Un workshop réussi. Le suivi en temps réel fait vraiment la différence pour progresser sur les figures que l'on souhaite acquérir ou sublimer. Heureux d'avoir pu partager des moments en réel avec la communauté."</p>
+                    </div>
+                    <div class="not-italic mt-4 pt-4 border-t border-white/5">
+                        <span class="font-black uppercase text-[10px] tracking-widest text-orange-500">Jérémy</span>
+                    </div>
+                </div>
+                <!-- Témoignage 5 (Nicolas) -->
+                <div class="min-w-[320px] md:min-w-[400px] p-8 glass-effect rounded-[2rem] border border-white/5 flex flex-col italic">
+                    <div class="flex-grow">
+                        <i class="fas fa-quote-left text-orange-600 text-2xl opacity-50 mb-4 block"></i>
+                        <p class="text-gray-300 leading-relaxed text-sm">"Une journée très enrichissante aux côtés de Martin et Alexandre, merci à eux pour toutes leurs explications, leur disponibilité et leur implication pour développer la calisthénie."</p>
+                    </div>
+                    <div class="not-italic mt-4 pt-4 border-t border-white/5">
+                        <span class="font-black uppercase text-[10px] tracking-widest text-orange-500">Nicolas</span>
+                    </div>
+                </div>
+                <!-- Témoignage 6 (Benjamin) -->
+                <div class="min-w-[320px] md:min-w-[400px] p-8 glass-effect rounded-[2rem] border border-white/5 flex flex-col italic">
+                    <div class="flex-grow">
+                        <i class="fas fa-quote-left text-orange-600 text-2xl opacity-50 mb-4 block"></i>
+                        <p class="text-gray-300 leading-relaxed text-sm">"Ce workshop était juste génial. Entouré de 2 coachs de qualité, ça m'a permis de comprendre beaucoup de choses et me faire corriger les erreurs sur mon handstand. Vivement le prochain."</p>
+                    </div>
+                    <div class="not-italic mt-4 pt-4 border-t border-white/5">
+                        <span class="font-black uppercase text-[10px] tracking-widest text-orange-500">Benjamin</span>
+                    </div>
+                </div>
+                <!-- Témoignage 7 (Colline) -->
+                <div class="min-w-[320px] md:min-w-[400px] p-8 glass-effect rounded-[2rem] border border-white/5 flex flex-col italic">
+                    <div class="flex-grow">
+                        <i class="fas fa-quote-left text-orange-600 text-2xl opacity-50 mb-4 block"></i>
+                        <p class="text-gray-300 leading-relaxed text-sm">"L'équilibre entre la théorie, les exemples donnés et le temps pour pratiquer était parfait. C'est très agréable de pouvoir être corrigé en direct. Ce que je retiendrais : convivialité, qualité, authenticité."</p>
+                    </div>
+                    <div class="not-italic mt-4 pt-4 border-t border-white/5">
+                        <span class="font-black uppercase text-[10px] tracking-widest text-orange-500">Colline</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer & Contact -->
+    <footer id="contact" class="py-24 bg-black border-t border-white/5">
+        <div class="max-w-4xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-5xl font-black uppercase mb-4 tracking-tighter">Une <span class="text-orange-600">question</span> ?</h2>
+                <p class="text-gray-400 text-lg">Martin et Alexandre vous répondent personnellement le plus rapidement possible.</p>
+            </div>
+
+            <div class="glass-effect p-8 md:p-12 rounded-[2.5rem] border border-white/10 shadow-2xl mb-16">
+                <form action="#" method="POST" class="space-y-6">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div class="space-y-2">
+                            <label for="name" class="text-[10px] uppercase font-bold tracking-widest text-gray-500 ml-1">Nom complet</label>
+                            <input type="text" id="name" name="name" placeholder="Votre nom" class="w-full form-input rounded-xl px-4 py-4 text-white placeholder-gray-600" required>
+                        </div>
+                        <div class="space-y-2">
+                            <label for="email" class="text-[10px] uppercase font-bold tracking-widest text-gray-500 ml-1">Email</label>
+                            <input type="email" id="email" name="email" placeholder="votre@email.com" class="w-full form-input rounded-xl px-4 py-4 text-white placeholder-gray-600" required>
+                        </div>
+                    </div>
+                    <div class="space-y-2">
+                        <label for="message" class="text-[10px] uppercase font-bold tracking-widest text-gray-500 ml-1">Votre question</label>
+                        <textarea id="message" name="message" rows="4" placeholder="Comment pouvons-nous vous aider ?" class="w-full form-input rounded-xl px-4 py-4 text-white placeholder-gray-600" required></textarea>
+                    </div>
+                    <button type="submit" class="w-full py-5 bg-white hover:bg-orange-600 text-black hover:text-white transition-all duration-300 font-black uppercase tracking-widest rounded-2xl shadow-xl">
+                        Envoyer le message
+                    </button>
+                </form>
+            </div>
+
+            <div class="flex flex-wrap justify-center gap-6 mb-16">
+                <a href="https://instagram.com/exilibre90" target="_blank" class="flex items-center gap-3 px-6 py-3 rounded-full border border-white/10 hover:border-orange-600 transition-all">
+                    <i class="fab fa-instagram text-xl text-orange-600"></i>
+                    <span class="font-bold">@exilibre90</span>
+                </a>
+                <a href="https://instagram.com/alexandre_012workout" target="_blank" class="flex items-center gap-3 px-6 py-3 rounded-full border border-white/10 hover:border-orange-600 transition-all">
+                    <i class="fab fa-instagram text-xl text-orange-600"></i>
+                    <span class="font-bold">@alexandre_012workout</span>
+                </a>
+            </div>
+
+            <div class="pt-10 border-t border-white/5 text-center text-[10px] uppercase tracking-[0.3em] text-gray-600">
+                &copy; 2026 Workshop Callisthénie. Tous droits réservés.
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function scrollGallery(id, distance) {
+            document.getElementById(id).scrollBy({ left: distance, behavior: 'smooth' });
+        }
+        window.addEventListener('scroll', () => {
+            const nav = document.getElementById('mainNav');
+            if (window.scrollY > 50) {
+                nav.classList.add('bg-black/90', 'h-16');
+                nav.classList.remove('h-20');
+            } else {
+                nav.classList.remove('bg-black/90', 'h-16');
+                nav.classList.add('h-20');
+            }
+        });
+    </script>
+</body>
+</html>
